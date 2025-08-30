@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "9e01e77f-640b-42fd-ad6f-d0771f9ae0a1",
+		"name": "Exelon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46581216",
+		"_collection_link": "https://shreya-2923978.postman.co/workspace/Shreya's-Workspace~8a343629-846b-4e4f-838a-5327f34d92f0/collection/46581216-9e01e77f-640b-42fd-ad6f-d0771f9ae0a1?action=share&source=collection_link&creator=46581216"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"devadigashreya691@gmail.com\",\r\n  \"password\": \"Shreya123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"devadigashreya691@gmail.com\",\r\n  \"password\": \"Shreya123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Polls",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjJiMDgxZGYwMzg0ODg2NThlOTRjMyIsImVtYWlsIjoiZGV2YWRpZ2FzaHJleWE2OTFAZ21haWwuY29tIiwiaWF0IjoxNzU2NTQzNzI4LCJleHAiOjE3NTcxNDg1Mjh9.nh6KwC8LRxLWihyOAV5lMCYXYeoxjLM-BSif0UJQ4L4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"Which programming language do you like the most?\",\r\n  \"options\": [\"Python\", \"JavaScript\", \"C#\", \"Java\"],\r\n  \"startDate\": \"2025-08-30T00:00:00Z\",\r\n  \"endDate\": \"2025-09-30T23:59:59Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/polls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjJiMDgxZGYwMzg0ODg2NThlOTRjMyIsImVtYWlsIjoiZGV2YWRpZ2FzaHJleWE2OTFAZ21haWwuY29tIiwiaWF0IjoxNzU2NTQzNzI4LCJleHAiOjE3NTcxNDg1Mjh9.nh6KwC8LRxLWihyOAV5lMCYXYeoxjLM-BSif0UJQ4L4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/auth/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List active",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/polls?status=closed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "closed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View poll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/polls/68b2cb9a26c6aada38bf8223",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls",
+						"68b2cb9a26c6aada38bf8223"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vote",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjJiMDgxZGYwMzg0ODg2NThlOTRjMyIsImVtYWlsIjoiZGV2YWRpZ2FzaHJleWE2OTFAZ21haWwuY29tIiwiaWF0IjoxNzU2NTQzNzI4LCJleHAiOjE3NTcxNDg1Mjh9.nh6KwC8LRxLWihyOAV5lMCYXYeoxjLM-BSif0UJQ4L4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"optionId\": \"68b2cb9b26c6aada38bf8226\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/polls/68b2cb9a26c6aada38bf8223/vote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls",
+						"68b2cb9a26c6aada38bf8223",
+						"vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Results",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjJiMDgxZGYwMzg0ODg2NThlOTRjMyIsImVtYWlsIjoiZGV2YWRpZ2FzaHJleWE2OTFAZ21haWwuY29tIiwiaWF0IjoxNzU2NTQzNzI4LCJleHAiOjE3NTcxNDg1Mjh9.nh6KwC8LRxLWihyOAV5lMCYXYeoxjLM-BSif0UJQ4L4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"optionId\": \"68b2bb05a36b0a397775cfc5\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/polls/68b2cb9a26c6aada38bf8223/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls",
+						"68b2cb9a26c6aada38bf8223",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjJiMDgxZGYwMzg0ODg2NThlOTRjMyIsImVtYWlsIjoiZGV2YWRpZ2FzaHJleWE2OTFAZ21haWwuY29tIiwiaWF0IjoxNzU2NTQzNzI4LCJleHAiOjE3NTcxNDg1Mjh9.nh6KwC8LRxLWihyOAV5lMCYXYeoxjLM-BSif0UJQ4L4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"Updated question?\",\r\n  \"options\": [\"Opt A\", \"Opt B\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/polls/68b2bb05a36b0a397775cfc3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls",
+						"68b2bb05a36b0a397775cfc3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjJiMDgxZGYwMzg0ODg2NThlOTRjMyIsImVtYWlsIjoiZGV2YWRpZ2FzaHJleWE2OTFAZ21haWwuY29tIiwiaWF0IjoxNzU2NTQzNzI4LCJleHAiOjE3NTcxNDg1Mjh9.nh6KwC8LRxLWihyOAV5lMCYXYeoxjLM-BSif0UJQ4L4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"Updated question?\",\r\n  \"options\": [\"Opt A\", \"Opt B\"]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/polls/68b2bb05a36b0a397775cfc3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"polls",
+						"68b2bb05a36b0a397775cfc3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
